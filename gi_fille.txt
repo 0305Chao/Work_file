@@ -1,0 +1,115 @@
+#git 命令使用
+
+1)创建版本
+mkdir chao
+2)初始化
+git init
+
+3)创建文件
+touch chao.txt
+添加仓库
+4)git add chao.txt
+	cat chao.txt
+	aaa
+	ddd
+	ccc
+	eee
+	
+5)提交到仓库
+git commit -m "new"
+
+	cat chao.txt
+	aaa
+	ddd
+	ccc
+	eee
+	111
+	222
+	333
+	444
+6)查看状态
+git status
+
+7)查看日志
+git log
+
+git log --pretty=oneling
+	eg:
+		01bfff1a7dfcab652ae1e851521c4205cc2ea2a8 hello new
+		7e202bb3bc78fe8ee8ff5722152a34db303f0674 first name
+		f88b97c3948180da3015ec2b0316a983488f894a first name
+我下面有两个文件 chao.txt  test.txt 提交的版本“new”  "name" "name"
+时光穿梭
+8)git reset --hard HEAD^  #退回上一个版本
+  git reset --hard 01bf #退回到上一个版本
+9）查看记录你的每一条命令  
+git reflog
+10）查看你没有提交的内容
+git diff hello.txt
+11)查看暂缓去和工作区的内容
+git diff HEAD hello.txt
+12)撤销修改
+	一没有在缓存区也就是没有提交git commit -m .....
+	git checkout hello.txt
+	二提交后撤回
+	git --hard HEAD^
+13)删除文件
+git rm hello.txt
+14)恢复
+git reset --hard HEAD^
+
+三创建删除分支
+	git checkout -b dev #创建分支
+	git branch #查看当前的分支
+	在dev修改文件
+	git add hello.txt
+	git commit -m "dev"
+	git checkout master #切换分支
+	cat hello.txt  #是没有修改的内容的
+	git merge dev #合并dev到master
+	git branch -d dev #删除dev
+	git branch dev #也是创建
+四查看分支情况
+	git log graph --pretty=oneline #分支号是交长的
+	git log graph --pretty=oneline --abbrev-commit
+五推送
+	git init #初始化
+	git add hello.txt
+	git commit  -m "first"
+	git remote add orgin git@github.com/0305Chao/test.git
+	git push -u orgin master
+六下载
+	git clone git@github.com/0305Chao/test.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
